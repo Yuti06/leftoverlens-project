@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: leftoverlens
+    env: node
+    buildCommand: npm run install:all && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: ANTHROPIC_API_KEY
+        sync: false  # Set this in Render dashboard
+      - key: PORT
+        value: 3001
